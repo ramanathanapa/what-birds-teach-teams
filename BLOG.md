@@ -58,10 +58,10 @@ Boids started in film and games, and that's still where it's used most. The idea
 - **Crowd safety.** Evacuation simulators for stadiums, airports and metro stations use agent models from the same family, so designers can test exits before anything is built.
 
 ### Data and AI
-- **Network charts.** Force-directed graph layouts, used in D3 and Gephi, are the boids rules in a chart. Every node pushes the others away (separation), every link pulls its two nodes together (cohesion), and the picture settles into clusters with nobody placing the nodes by hand.
-- **Clustering.** Flocking-based clustering treats each data point, such as a document, as a bird. Similar items fly together and different ones drift apart, so groups form on their own. Researchers at Oak Ridge National Laboratory used it to sort news articles by topic.
-- **Model tuning.** Particle swarm optimisation (1995) was inspired by flock simulations. Many "birds" search for the best settings at once, each pulled toward its own best find and the best its neighbours have found. Data scientists use it to tune hyperparameters and choose features.
-- **AI agents.** Multi-agent systems are the closest match. In Stanford's *Generative Agents* study (2023), one AI agent was told to host a party. Invitations spread from agent to agent and guests showed up, and nobody scripted it. When agents share work without an orchestrator, you see the boids failure modes: duplicated tasks, clashing conventions, and drift away from the goal.
+- **Network charts.** In D3 and Gephi network charts, nodes push apart and links pull together. Clusters appear on their own.
+- **Clustering.** Each data point acts like a bird. Similar points flock together, so groups form without being set in advance.
+- **Model tuning.** Particle swarm optimisation, inspired by flocks, finds good model settings by letting many guesses learn from their neighbours.
+- **AI agents.** AI agents working without a boss show the same problems as a bad flock: duplicate work, clashing styles and drifting off goal.
 
 ### What this means for testing AI
 You can't read three rule weights and predict what the flock will do. You have to run it. AI agents work the same way: reading the prompts won't tell you how they'll behave. So you run evals, many times, because results vary from run to run, and you re-run the whole suite after every change.
