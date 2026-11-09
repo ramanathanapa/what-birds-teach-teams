@@ -57,11 +57,9 @@ Boids started in film and games, and that's still where it's used most. The idea
 - **Biology.** Researchers use boids-style models to study starling murmurations, fish schools and locust swarms, testing which simple rules reproduce the shapes they see in the wild.
 - **Crowd safety.** Evacuation simulators for stadiums, airports and metro stations use agent models from the same family, so designers can test exits before anything is built.
 
-### Software, data and AI
-- **Data engineering.** The three rules show up in everyday pipelines:
-  - **Don't bump (separation):** in Spark or Kafka, each worker takes its own chunk of the data, so no two workers process the same rows.
-  - **Go the same way (alignment):** every pipeline uses the same column names and date format, so data from different teams fits together.
-  - **Stay together (cohesion):** pipelines publish their tables to a shared catalog, so everyone can see what exists and nobody builds the same thing twice.
+### Software, art and AI
+- **Problem solving.** Particle swarm optimisation (1995) was inspired by flock simulations. Many "birds" search for the best answer at once, each pulled toward its own best find and the best one its neighbours have found. Engineers use it to tune things like antenna shapes and machine learning settings.
+- **Art and visuals.** Flocking is a favourite in generative art, music visualisers and museum installations, because a few lines of code produce motion that looks alive. The Processing coding tool, used in many schools, ships with a flocking example.
 - **AI agents.** Multi-agent systems are the closest match. In Stanford's *Generative Agents* study (2023), one AI agent was told to host a party. Invitations spread from agent to agent and guests showed up, and nobody scripted it. When agents share work without an orchestrator, you see the boids failure modes: duplicated tasks, clashing conventions, and drift away from the goal.
 
 ### What this means for testing AI
