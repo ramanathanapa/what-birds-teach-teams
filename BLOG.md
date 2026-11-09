@@ -57,9 +57,10 @@ Boids started in film and games, and that's still where it's used most. The idea
 - **Biology.** Researchers use boids-style models to study starling murmurations, fish schools and locust swarms, testing which simple rules reproduce the shapes they see in the wild.
 - **Crowd safety.** Evacuation simulators for stadiums, airports and metro stations use agent models from the same family, so designers can test exits before anything is built.
 
-### Software, art and AI
-- **Problem solving.** Particle swarm optimisation (1995) was inspired by flock simulations. Many "birds" search for the best answer at once, each pulled toward its own best find and the best one its neighbours have found. Engineers use it to tune things like antenna shapes and machine learning settings.
-- **Art and visuals.** Flocking is a favourite in generative art, music visualisers and museum installations, because a few lines of code produce motion that looks alive. The Processing coding tool, used in many schools, ships with a flocking example.
+### Data and AI
+- **Network charts.** Force-directed graph layouts, used in D3 and Gephi, are the boids rules in a chart. Every node pushes the others away (separation), every link pulls its two nodes together (cohesion), and the picture settles into clusters with nobody placing the nodes by hand.
+- **Clustering.** Flocking-based clustering treats each data point, such as a document, as a bird. Similar items fly together and different ones drift apart, so groups form on their own. Researchers at Oak Ridge National Laboratory used it to sort news articles by topic.
+- **Model tuning.** Particle swarm optimisation (1995) was inspired by flock simulations. Many "birds" search for the best settings at once, each pulled toward its own best find and the best its neighbours have found. Data scientists use it to tune hyperparameters and choose features.
 - **AI agents.** Multi-agent systems are the closest match. In Stanford's *Generative Agents* study (2023), one AI agent was told to host a party. Invitations spread from agent to agent and guests showed up, and nobody scripted it. When agents share work without an orchestrator, you see the boids failure modes: duplicated tasks, clashing conventions, and drift away from the goal.
 
 ### What this means for testing AI
