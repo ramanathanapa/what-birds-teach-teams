@@ -59,7 +59,7 @@ Boids started in film and games, and that's still where it's used most. The idea
 
 ### Software, data and AI
 - **Data engineering.** The same rules show up in how data platforms share work without a master:
-  - **Consistent hashing** (Dynamo-style stores such as Riak and DynamoDB): each node owns a slice of a key ring and hands keys to its neighbours when nodes join or leave. That's separation, or clear ownership.
+  - **Consistent hashing** (Dynamo-style stores such as Riak): each node owns a slice of a key ring and hands keys to its neighbours when nodes join or leave. That's separation, or clear ownership.
   - **Retries with jitter**: when an API or database comes back after an outage, every pipeline waits a slightly random amount before retrying, so they don't all hit it at once. That's separation in time.
   - **Data mesh**: domain teams own their own data products, and shared data contracts keep them compatible without a central data team approving every change. That's alignment without a boss.
 - **AI agents.** Multi-agent systems are the closest match. In Stanford's *Generative Agents* study (2023), one AI agent was told to host a party. Invitations spread from agent to agent and guests showed up, and nobody scripted it. When agents share work without an orchestrator, you see the boids failure modes: duplicated tasks, clashing conventions, and drift away from the goal.
