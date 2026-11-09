@@ -201,7 +201,7 @@ footer{border-top:1px solid var(--line);padding-top:16px;color:var(--muted);font
 
       <div class="cat">
         <span class="label">Software, data and AI</span>
-        <div class="use"><h3>Data engineering</h3><p>Data platforms that share work without a master: consistent hashing in Dynamo-style stores (each node owns a slice of the key ring and hands keys to its neighbours when nodes join or leave), retries with jitter (pipelines wait a slightly random time before retrying a recovered API, so they don't all hit it at once), and data mesh (domain teams own their data products, kept compatible by shared data contracts rather than a central team).</p></div>
+        <div class="use"><h3>Data engineering</h3><p>The three rules in everyday pipelines. Don't bump: in Spark or Kafka, each worker takes its own chunk of data, so no two process the same rows. Go the same way: every pipeline uses the same column names and date format, so data from different teams fits together. Stay together: pipelines publish their tables to a shared catalog, so nobody builds the same thing twice.</p></div>
         <div class="use"><h3>AI agents</h3><p>Multi-agent systems are the honest match. In Stanford's Generative Agents study (2023), one AI agent was told to host a party; invitations spread agent to agent and guests showed up, without anyone scripting it. Agents sharing work without an orchestrator show the boids failure modes directly: duplicated tasks, clashing conventions, drift from the goal.</p></div>
       </div>
     </div>
