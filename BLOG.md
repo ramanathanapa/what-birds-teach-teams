@@ -119,4 +119,3 @@ One caution: this is a metaphor. People plan, remember and talk to each other, a
 
 - Craig Reynolds, [Boids](https://www.red3d.com/cwr/boids/), his own page, including the 1987 SIGGRAPH paper *Flocks, Herds, and Schools: A Distributed Behavioral Model*.
 - Couzin et al., *Effective leadership and decision-making in animal groups on the move*, Nature (2005).
-- Park et al., *Generative Agents: Interactive Simulacra of Human Behavior* (2023).
