@@ -4,11 +4,11 @@ Watch a flock of starlings turn across the evening sky and it looks choreographe
 
 In 1986 Craig Reynolds showed how this works with a computer simulation he called **boids**. Each simulated bird looks only at the few birds near it and follows three rules. Run that across a few hundred birds and a flock appears, with no leader and no plan.
 
-![A flock of bar-headed geese taking off over a lake while greater flamingos wade in the shallows below](images/ram-clicks-geese-and-flamingos.jpg)
+![A flock of greater flamingos flying low over a lake, necks and legs stretched out, all heading the same way](images/ram-clicks-flamingos.jpg)
 
-*📸 **Ram Clicks...** Bar-headed geese lifting off while greater flamingos wade below. And no, this one isn't AI-generated: no prompt was typed. Taken at Bhigwan, Maharashtra.*
+*📸 **Ram Clicks...** Greater flamingos in flight over the water. And no, this one isn't AI-generated: no prompt was typed. Taken at Bhigwan, Maharashtra.*
 
-Look at the photo with the three rules in mind. Up in the air, the geese are using all three: no two wings touch (**separation**), every beak points the same way (**alignment**), and nobody has peeled off on a solo trip (**cohesion**). Down on the water, the flamingos run a slower version of the same rules: they spread out enough to feed, face roughly the same way, and stay together as one group. Same rules, different speed. Two flocks in one frame, and nobody in charge of either.
+Look at the photo with the three rules in mind. No two wings touch (**separation**), every neck and beak points the same way (**alignment**), and nobody has peeled off on a solo trip (**cohesion**). There's no lead bird barking orders either. Each flamingo is just watching the few around it, and the whole flock moves as one.
 
 > **Try it:** open [`index.html`](index.html) in a browser. You can drag the three rules up and down, switch between team presets, and add "informed leaders" to see how few it takes to steer the group.
 
