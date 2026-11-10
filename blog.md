@@ -83,4 +83,4 @@ A tip if you build with AI agents: you can't predict a flock by reading its thre
 
 - Craig Reynolds, [Boids](https://www.red3d.com/cwr/boids/), his own page, including the 1987 paper *Flocks, Herds, and Schools: A Distributed Behavioral Model*.
 - Couzin et al., *Effective leadership and decision-making in animal groups on the move*, Nature (2005).
-- The simulation is one file, [`index.html`](https://github.com/ramanathanapa/what-birds-teach-teams/blob/main/index.html), with no dependencies. Open it to read how it works.
+- The code is on GitHub: [ramanathanapa/what-birds-teach-teams](https://github.com/ramanathanapa/what-birds-teach-teams). The simulation is one file, [`index.html`](https://github.com/ramanathanapa/what-birds-teach-teams/blob/main/index.html), with no dependencies.
