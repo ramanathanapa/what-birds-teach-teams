@@ -8,7 +8,9 @@ Each bird follows three local rules: keep your distance (separation), match dire
 
 ## Run it
 
-Open `index.html` in a browser. There is nothing to install or build.
+Try it live at [ramanathanapa.github.io/what-birds-teach-teams](https://ramanathanapa.github.io/what-birds-teach-teams/).
+
+To run it locally, open `index.html` in a browser. There is nothing to install or build.
 
 The page loads its fonts from Google Fonts, so it falls back to system fonts when you are offline.
 

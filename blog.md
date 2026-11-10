@@ -22,7 +22,7 @@ You can see all three rules in the photo. No two wings touch, every beak points 
 
 One more setting matters as much as the rules: **how far each bird looks**. Birds that watch only their nearest neighbours break into small flocks that drift apart. Teams that look only at their own squad become silos.
 
-> **Try it:** open [`index.html`](https://github.com/ramanathanapa/what-birds-teach-teams/blob/main/index.html) in a browser. Drag the three rules up and down and watch what happens to the flock.
+> **Try it:** open the [live simulation](https://ramanathanapa.github.io/what-birds-teach-teams/). Drag the three rules up and down and watch what happens to the flock.
 
 ---
 
