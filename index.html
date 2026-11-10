@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: sky canvas + field-notebook controls as the opener, then three reading sections (kids, technology, teams) in one column */
+/* Layout: sky canvas + field-notebook controls as the opener, then three reading sections (how it works, technology, teams) in one column */
 :root{
   --sky:#E7EEF5; --paper:#F6F8FA; --card:#FFFFFF; --ink:#15233B; --muted:#56657C; --line:#C9D4E0;
   --bird:#24406E; --accent:#E0702E; --accent-soft:#FBE7DA; --focus:#2F6FDE;
@@ -47,7 +47,7 @@ nav a:hover{border-color:var(--muted)}
 @media (max-width:860px){.main{grid-template-columns:minmax(0,1fr)}}
 .stage{position:relative;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--sky)}
 canvas{display:block;width:100%;height:min(62vh,540px);min-height:320px;cursor:crosshair;touch-action:none}
-.hud{position:absolute;left:12px;bottom:10px;font-family:var(--mono);font-size:12px;color:var(--muted);pointer-events:none}
+.hud{position:absolute;left:12px;right:12px;bottom:10px;font-family:var(--mono);font-size:12px;color:var(--muted);pointer-events:none}
 .lens{border-left:3px solid var(--accent);padding:2px 0 2px 14px;margin-top:14px}
 .lens b{font-family:var(--display);font-weight:700;font-size:17px;display:block}
 .lens p{margin-top:2px;max-width:68ch}
@@ -68,8 +68,8 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
 /* Reading sections */
 section{display:flex;flex-direction:column;gap:20px;scroll-margin-top:16px}
 .intro{max-width:66ch;color:var(--muted)}
-.kids{background:var(--accent-soft);border-radius:18px;padding-block:28px;padding-inline:clamp(18px,4vw,40px)}
-.kids .story{font-size:clamp(18px,2vw,20px);line-height:1.65;max-width:60ch}
+.basics{background:var(--accent-soft);border-radius:18px;padding-block:28px;padding-inline:clamp(18px,4vw,40px)}
+.basics .story{font-size:clamp(18px,2vw,20px);line-height:1.65;max-width:60ch}
 .rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
 .rule{background:var(--card);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:6px}
 .rule .n{font-family:var(--display);font-weight:700;font-size:34px;line-height:1;color:var(--accent)}
@@ -104,10 +104,10 @@ footer{border-top:1px solid var(--line);padding-top:16px;color:var(--muted);font
     <header>
       <div>
         <h1>What birds can teach your team</h1>
-        <p class="sub">Craig Reynolds' boids (1986): every bird follows three local rules, and a flock appears with no leader. Play with it, then read what it teaches kids, engineers and teams.</p>
+        <p class="sub">Craig Reynolds' boids (1986): every bird follows three local rules, and a flock appears with no leader. Play with it, then read how it works, where it is used, and what it teaches teams.</p>
       </div>
       <nav aria-label="Sections">
-        <a href="#kids">For kids</a>
+        <a href="#basics">How it works</a>
         <a href="#tech">In technology</a>
         <a href="#teams">For teams</a>
       </nav>
@@ -119,7 +119,7 @@ footer{border-top:1px solid var(--line);padding-top:16px;color:var(--muted);font
           <canvas id="sky" aria-label="Boids flocking simulation. Click or tap to add birds."></canvas>
           <div class="hud" id="hud">120 boids</div>
         </div>
-        <div class="lens">
+        <div class="lens" aria-live="polite">
           <b id="lensTitle">Healthy team</b>
           <p id="lensText">Clear ownership, shared direction, and staying connected, all in balance. The group moves together and still gives everyone room.</p>
         </div>
@@ -153,25 +153,26 @@ footer{border-top:1px solid var(--line);padding-top:16px;color:var(--muted);font
           <button id="scatter">Scatter</button>
           <button id="radius" aria-pressed="false">Show vision</button>
           <button id="leaders" aria-pressed="false">Add informed leaders</button>
+          <button id="challenge">Challenge: fix a team</button>
         </div>
-        <p class="how">Click or tap the sky to add birds. Move your pointer over it and the flock avoids you. Informed leaders (orange) quietly steer toward a goal; watch how few it takes.</p>
+        <p class="how">Click or tap the sky to add birds. Move your pointer over it and the flock avoids you. Informed leaders (orange) quietly steer toward a goal; watch how few it takes. The line under the sky counts the flocks and shows how many birds fly the same way.</p>
       </aside>
     </div>
   </div>
 
-  <section id="kids" class="kids">
-    <span class="label">For kids</span>
-    <h2>How do birds fly together without a boss?</h2>
-    <p class="story">Have you seen a big group of birds swoop across the sky and turn all at once? It looks like someone is giving orders. Nobody is! Each bird only watches the few birds right next to it, and follows three tiny rules.</p>
+  <section id="basics" class="basics">
+    <span class="label">How it works</span>
+    <h2>How a flock moves without a leader</h2>
+    <p class="story">A large flock can turn all at once, as if someone were giving orders. Nobody is. Each bird watches only the few birds next to it and follows three simple rules.</p>
     <div class="rules">
-      <div class="rule"><span class="n">1</span><h3>Don't bump</h3><p>If a friend is too close, scoot away a little.</p><span class="tech">Separation</span></div>
-      <div class="rule"><span class="n">2</span><h3>Go the same way</h3><p>Fly in the direction your friends are flying.</p><span class="tech">Alignment</span></div>
-      <div class="rule"><span class="n">3</span><h3>Stay together</h3><p>Don't wander off alone. Move toward your friends.</p><span class="tech">Cohesion</span></div>
+      <div class="rule"><span class="n">1</span><h3>Keep your distance</h3><p>If a neighbour is too close, move away a little.</p><span class="tech">Separation</span></div>
+      <div class="rule"><span class="n">2</span><h3>Match direction</h3><p>Fly in the same direction as your neighbours.</p><span class="tech">Alignment</span></div>
+      <div class="rule"><span class="n">3</span><h3>Stay together</h3><p>Move toward the middle of your neighbours. Don't drift off alone.</p><span class="tech">Cohesion</span></div>
     </div>
-    <p class="story">That's all. When every bird does this, the whole flock moves like one giant animal. In 1986 a computer scientist named Craig Reynolds made pretend birds on a computer that follow these rules. He called them "boids".</p>
+    <p class="story">That is all it takes. When every bird does this, the whole flock moves as one. In 1986 the computer scientist Craig Reynolds built a simulation of birds that follow these rules. He called them "boids".</p>
     <div class="tryit">
       <h3>Try it</h3>
-      <p>In the game above, slide <b>Cohesion</b> to 0 and watch everyone drift apart. Slide <b>Separation</b> to 0 and they all squash into one blob. Or try it with friends at the playground: everyone walks around following the three rules, with no leader, and you'll make your own flock.</p>
+      <p>In the simulation above, slide <b>Cohesion</b> to 0 and watch the flock drift apart. Slide <b>Separation</b> to 0 and the birds crowd into one spot. It also works as a team exercise without a screen: everyone walks around a room following the three rules, with no leader, and a flock forms.</p>
     </div>
   </section>
 
@@ -201,10 +202,9 @@ footer{border-top:1px solid var(--line);padding-top:16px;color:var(--muted);font
 
       <div class="cat">
         <span class="label">Data and AI</span>
-        <div class="use"><h3>Network charts</h3><p>In D3 and Gephi network charts, nodes push apart and links pull together. Clusters appear on their own.</p></div>
-        <div class="use"><h3>Clustering</h3><p>Each data point acts like a bird. Similar points flock together, so groups form without being set in advance.</p></div>
-        <div class="use"><h3>Model tuning</h3><p>Particle swarm optimisation, inspired by flocks, finds good model settings by letting many guesses learn from their neighbours.</p></div>
-        <div class="use"><h3>AI agents</h3><p>AI agents working without a boss show the same problems as a bad flock: duplicate work, clashing styles and drifting off goal.</p></div>
+        <div class="use"><h3>Optimisation</h3><p>In 1995 Kennedy and Eberhart were simulating a bird flock and found it could search for answers. Their particle swarm optimisation is still in use: many guesses move through the problem, each pulled toward the best spot it has found and the best its neighbours have found.</p></div>
+        <div class="use"><h3>Databases with no master</h3><p>Apache Cassandra has no node in charge. Every second each node swaps status with a few others, and the whole cluster soon agrees on which nodes are up.</p><p class="note">This "gossip" was not built from boids. It is the same principle: local exchanges, no central controller.</p></div>
+        <div class="use"><h3>Teams of AI agents</h3><p>The three rules map directly: one owner per task (separation), shared instructions and output format (alignment), a shared record of progress (cohesion). Leave one out and you get duplicate work, clashing styles or agents drifting off goal.</p></div>
       </div>
     </div>
 
@@ -320,6 +320,26 @@ function step(){
     b.x=(b.x+b.vx+W)%W;b.y=(b.y+b.vy+H)%H}
 }
 
+// Team health: flocks = groups of 3+ birds linked within vision radius and heading within 60° of each other; ali = share of birds heading the same way (0..1)
+const M={flocks:0,alone:0,big:0,ali:0};
+let ch=null;
+function lens(t,x){document.getElementById('lensTitle').textContent=t;document.getElementById('lensText').textContent=x}
+function measure(){
+  const n=B.length,R2=S.rad*S.rad,seen=new Uint8Array(n);let sx=0,sy=0;
+  for(const b of B){const l=Math.hypot(b.vx,b.vy)||1;sx+=b.vx/l;sy+=b.vy/l}
+  M.ali=n?Math.hypot(sx,sy)/n:0;M.flocks=M.alone=M.big=0;
+  // ponytail: O(n²) flood fill, fine at 400 birds every 20 frames; reuse the step() grid if the bird cap grows
+  for(let i=0;i<n;i++){if(seen[i])continue;seen[i]=1;const st=[i];let size=0;
+    while(st.length){const a=B[st.pop()];size++;
+      for(let j=0;j<n;j++){if(seen[j])continue;let dx=Math.abs(B[j].x-a.x),dy=Math.abs(B[j].y-a.y);if(dx>W/2)dx=W-dx;if(dy>H/2)dy=H-dy;
+        if(dx*dx+dy*dy<R2&&a.vx*B[j].vx+a.vy*B[j].vy>0.5*Math.hypot(a.vx,a.vy)*Math.hypot(B[j].vx,B[j].vy)){seen[j]=1;st.push(j)}}}
+    if(size>=3)M.flocks++;else M.alone+=size;if(size>M.big)M.big=size}
+  if(ch){ch.ok=(M.big>=n*0.85&&M.ali>=0.8)?ch.ok+1:0;
+    if(ch.ok>=3){lens('Fixed in '+Math.round((performance.now()-ch.t)/1000)+' seconds','Almost everyone is in one flock, flying the same way. Which slider made the difference? That is the one to talk about with your team.');ch=null}}
+}
+document.getElementById('challenge').onclick=()=>{const key=['silos','lone'][Math.random()*2|0];apply(key);scatter();ch={t:performance.now(),ok:0};
+  lens('Challenge: fix the '+PRESETS[key].name+' team','Move the sliders until almost everyone flies in one flock, heading the same way. The line under the sky shows how close you are.')};
+
 let bird,accent,line;
 function colors(){const c=getComputedStyle(document.documentElement);bird=c.getPropertyValue('--bird').trim();accent=c.getPropertyValue('--accent').trim();line=c.getPropertyValue('--muted').trim()}
 colors();matchMedia('(prefers-color-scheme: dark)').addEventListener('change',colors);new MutationObserver(colors).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
@@ -331,12 +351,13 @@ function draw(){
   if(showR&&B[0]){const b=B[0];ctx.strokeStyle=line;ctx.lineWidth=1;ctx.beginPath();ctx.arc(b.x,b.y,S.rad,0,7);ctx.stroke();ctx.setLineDash([4,4]);ctx.beginPath();ctx.arc(b.x,b.y,S.rad*.5,0,7);ctx.stroke();ctx.setLineDash([])}
   for(let i=0;i<B.length;i++){const b=B[i],a=Math.atan2(b.vy,b.vx);ctx.save();ctx.translate(b.x,b.y);ctx.rotate(a);
     ctx.fillStyle=(b.lead||(showR&&i===0))?accent:bird;const s=b.lead?1.35:1;ctx.beginPath();ctx.moveTo(8*s,0);ctx.lineTo(-5*s,4.5*s);ctx.lineTo(-2.5*s,0);ctx.lineTo(-5*s,-4.5*s);ctx.closePath();ctx.fill();ctx.restore()}
-  const nl=B.filter(b=>b.lead).length;hud.textContent=B.length+' boids'+(nl?' · '+nl+' informed leaders ('+Math.round(nl/B.length*100)+'%)':'')+(paused?' · paused':'');
+  const nl=B.filter(b=>b.lead).length;hud.textContent=B.length+' boids · '+M.flocks+(M.flocks===1?' flock':' flocks')+' · '+M.alone+' alone · '+Math.round(M.ali*100)+'% same direction'+(nl?' · '+nl+' informed leaders ('+Math.round(nl/B.length*100)+'%)':'')+(paused?' · paused':'');
 }
 if(matchMedia('(prefers-reduced-motion: reduce)').matches){S.spd=1.4}
 sync();scatter();apply('balanced');
 for(let i=0;i<60;i++)step();
-(function loop(){if(!paused)step();draw();requestAnimationFrame(loop)})();
+measure();let frame=0;
+(function loop(){if(!paused){step();if(++frame%20===0)measure()}draw();requestAnimationFrame(loop)})();
 })();
 </script>
 </body>
